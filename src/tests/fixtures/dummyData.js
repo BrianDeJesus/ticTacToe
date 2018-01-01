@@ -16,6 +16,37 @@ export const board2 = [
     '', '', ''
 ];
 
+export const board3 = [
+    '', '', 'X', 
+    '', 'X', 'O', 
+    'X', 'O', ''
+];
+
+export const board4 = [
+    'O', '', 'O', 
+    'O', 'X', 'X', 
+    'O', 'X', ''
+];
+
+export const board5 = [
+    'X', 'O', 'O', 
+    'O', 'O', 'X', 
+    'X', 'X', 'O'
+];
+
+export const board6 = [
+    'X', 'X', 'O', 
+    'X', 'O', '', 
+    '', '', ''
+];
+
+export const board7 = [
+    'X', '', '', 
+    '', '', '', 
+    '', '', ''
+];
+
+
 export const defaultState = {
     turn: 'X',
     currentPlayer: 'human'

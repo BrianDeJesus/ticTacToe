@@ -1,13 +1,15 @@
 import emptySpots from './emptySpots';
+import computeWinner from './computeWinner';
+import computeDraw from './computeDraw';
 
 //state.board will be passed to board
 const aiMove = (player, board, depth, aiTurn) => { //player and aiTurn should be state.currentTurn.turn
     // base cases
-    if(virtualWin(board) === aiTurn){
+    if(computeWinner(board) === aiTurn){
       return {score: 100 - depth};
-    } else if(virtualWin(board) !== aiTurn){
+    } else if(computeWinner(board) === getOtherMove(aiTurn)){
         return {score: depth - 100};
-    } else if (virtualDraw(board)){
+    } else if (computeDraw(board)){
       return {score: 0};
     }
     else if (depth === 0) return {score: 0};
@@ -22,14 +24,38 @@ const aiMove = (player, board, depth, aiTurn) => { //player and aiTurn should be
       move.index = availSpots[i];
       board[availSpots[i]] = player;
   
-      otherPlayer = player === 'X' ? 'O' : 'X';
-      let result = minimax(otherPlayer, board, depth - 1);
+      otherPlayer = getOtherMove(player);
+      let result = aiMove(otherPlayer, board, depth - 1, aiTurn);
       move.score = result.score;
       //reset spot to check different case on each depth
       board[availSpots[i]] = '';
   
       moves.push(move);
     }
+    let bestMove;
+    // maximize AI's winning chance
+    if(player === aiTurn){
+      let bestScore = -10000;
+      for(let i = 0; i < moves.length; i++){
+        if(moves[i].score > bestScore){
+          bestScore = moves[i].score;
+          bestMove = i;
+        }
+      }
+    } else {// minimize your winning chance
+      let bestScore = 10000;
+      for(let i = 0; i < moves.length; i++){
+        if(moves[i].score < bestScore){
+          bestScore = moves[i].score;
+          bestMove = i;
+          }
+      }
+    }
+    return moves[bestMove];
+};
+
+const getOtherMove = (move) => {
+    return move === 'X' ? 'O' : 'X';
 };
 
 export default aiMove;

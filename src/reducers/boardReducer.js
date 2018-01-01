@@ -9,7 +9,14 @@ const boardReducer = (state = emptyBoard, action) => {
         case 'SHOW_SQUARE_CLICKED': 
             return state.map((square, index) => {
                 if(index === action.spotClicked && square === '') {
-                    return action.whichTurn
+                    return action.whichTurn;
+                }
+                return square;
+            });
+        case 'SHOW_AI_CHOICE':
+            return state.map((square, index) => {
+                if(index === action.spotChosen.index) {
+                    return action.whichTurn;
                 }
                 return square;
             });
