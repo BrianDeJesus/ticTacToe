@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header 1`] = `
+<div>
+  <header
+    className="App-header"
+  >
+    <h1
+      className="App-title"
+    >
+      Tic-Tac-Toe
+    </h1>
+  </header>
+</div>
+`;
