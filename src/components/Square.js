@@ -5,6 +5,7 @@ import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
 import computeWinner from '../computations/computeWinner';
 import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
+import { setHumanScore } from '../actions/score';
 
 class Square extends React.Component {
 
@@ -16,6 +17,7 @@ class Square extends React.Component {
                 winner = computeWinner(this.props.board);
                 if(winner !== 'Z') {
                     this.props.dispatch(setWinner(this.props.currentTurn.currentPlayer));
+                    this.props.dispatch(setHumanScore());
                 }
             }, 90);
             if(computeDraw(this.props.board)) {

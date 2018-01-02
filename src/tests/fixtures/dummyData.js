@@ -66,3 +66,8 @@ export const state3 = {
     turn: 'O',
     currentPlayer: 'human'
 };
+
+export const defaultScores = {
+    humanScore: 0,
+    aiScore: 0
+};
