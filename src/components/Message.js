@@ -18,7 +18,10 @@ const Message = (props) => {
     return (
         <div>
             {
-            !!props.gameEnding && <p>{ender}</p> 
+            !!props.gameEnding ? ( <p>{ender}</p> ) :
+            (
+                <p>Hey World</p>
+            )
             }
         </div>
     );
