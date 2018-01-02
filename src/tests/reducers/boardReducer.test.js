@@ -34,7 +34,7 @@ test('should return a cleared board', () => {
 test('should return new board with AI chosen spot', () => {
     const state = boardReducer(board1, {
         type: 'SHOW_AI_CHOICE',
-        spotChosen: { index: 2 },
+        spotChosen: 2,
         whichTurn: 'X'
     });
     expect(state).toEqual(board2);

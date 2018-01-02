@@ -19,3 +19,10 @@ test('should set default return correctly', () => {
     const state = gameOverReducer('', {});
     expect(state).toBe('');
 });
+
+test('should set restart return correctly', () => {
+    const state = gameOverReducer('', {
+        type: 'SET_RESTART'
+    });
+    expect(state).toBe('');
+});

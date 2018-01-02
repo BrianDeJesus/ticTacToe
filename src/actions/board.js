@@ -9,11 +9,14 @@ export const renderClickedSpot = (spotClicked, whichTurn = '') => ({
 });
 
 export const renderAiChoice = (whichTurn = '', board, dif) => { //Turn, board, difficulty
-    const spotChosen = aiMove(whichTurn, board, dif, whichTurn); //spotChosen is an object with score and index properties
+    let spotChosen = aiMove(whichTurn, board, dif, whichTurn).index; //aiMove returns object with score and index properties
+    if(spotChosen === undefined) {
+        spotChosen = 2;
+    }
     return {
         type: 'SHOW_AI_CHOICE',
-        whichTurn,
-        spotChosen 
+        spotChosen, 
+        whichTurn
     };
 };
 

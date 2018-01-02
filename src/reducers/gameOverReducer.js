@@ -5,6 +5,8 @@ const gameOverReducer = (state = '', action) => {
             return 'draw';
         case 'SET_WINNER':
             return action.winner;
+        case 'SET_RESTART':
+            return '';
         default:
             return state;
     };

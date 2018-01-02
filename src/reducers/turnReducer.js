@@ -13,7 +13,7 @@ const turnReducer = (state = defaultState, action) => {
         case 'SET_FIRST_PLAYER':
             return {
                 turn: 'X',
-                currentPlayer: action.firstPlayer
+                currentPlayer: action.player
             };
         default:
             return state;

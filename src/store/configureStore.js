@@ -4,6 +4,7 @@ import boardReducer from '../reducers/boardReducer';
 import turnReducer from '../reducers/turnReducer';
 import gameOverReducer from '../reducers/gameOverReducer';
 import difficultyReducer from '../reducers/difficultyReducer';
+import playAsReducer from '../reducers/playAsReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,8 @@ export default () => {
             board: boardReducer,
             currentTurn: turnReducer,
             gameEnding: gameOverReducer,
-            gameDifficulty: difficultyReducer
+            gameDifficulty: difficultyReducer,
+            playAs: playAsReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
     );

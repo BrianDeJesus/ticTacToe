@@ -15,7 +15,7 @@ test('should dispatch aiChoice Action ', () => {
     expect(action).toEqual({
         type: 'SHOW_AI_CHOICE',
         whichTurn: 'O',
-        spotChosen: expect.any(Object)
+        spotChosen: expect.any(Number)
     });
     expect(action.spotChosen.index).not.toBe(0);
 });

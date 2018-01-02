@@ -20,10 +20,14 @@ test('should get next turn correct state if ai is first', () => {
     expect(state).toEqual(state3);
 });
 
-test('should correctly set the first player', () => {
+test('should get default turn', () => {
+    const state = turnReducer(undefined, { type: '@@INIT' });
+    expect(state).toEqual(defaultState);
+}); 
+
+test('should return correct first player', () => {
     const state = turnReducer(undefined, {
         type: 'SET_FIRST_PLAYER',
-        firstPlayer: 'ai'
+        player: 'ai'
     });
-    expect(state).toEqual(state2);
 });

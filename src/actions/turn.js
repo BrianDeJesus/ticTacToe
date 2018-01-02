@@ -5,7 +5,7 @@ export const getNextPlayer = (currentPlayer) => ({ //Current player refers to hu
     currentPlayer
 });
 
-export const setFirstPlayer = (firstPlayer) => ({
+export const setFirstPlayer = (player) => ({
     type: 'SET_FIRST_PLAYER',
-    firstPlayer
+    player
 });
