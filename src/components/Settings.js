@@ -56,7 +56,7 @@ onRestartGame = () => {
                 <option value="O">O</option>
             </select>
             <button onClick={this.onRestartGame}>
-                You know what? Restart Game
+                Restart
             </button>
         </div>
     );

@@ -10,7 +10,7 @@ import { setAiScore } from '../actions/score';
 
 class Board extends React.Component {
 
-    compListen = () => {
+    compResponse = () => { //AI response to human click
         if(this.props.currentTurn.currentPlayer === 'ai' && (computeWinner(this.props.board) === 'Z')) {
             this.props.dispatch(renderAiChoice(this.props.currentTurn.turn, this.props.board, this.props.gameDifficulty));
             const winner = computeWinner(this.props.board);
@@ -31,7 +31,7 @@ class Board extends React.Component {
                 <div className="Board" >
                     {
                         this.props.board.map((square, index) => {
-                            return <Square key={index} id={index} compListen={this.compListen} />
+                            return <Square key={index} id={index} compResponse={this.compResponse} />
                         })
                     }
                 </div>

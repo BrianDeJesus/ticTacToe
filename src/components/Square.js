@@ -25,7 +25,7 @@ class Square extends React.Component {
             }
             this.props.dispatch(asyncNextPlayer(this.props.currentTurn.currentPlayer));
             setTimeout(() => {
-                this.props.compListen();
+                this.props.compResponse();
             }, 400); // wait 4 ms due to async next player being 3 ms
         }
     };
