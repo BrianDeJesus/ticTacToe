@@ -1,4 +1,3 @@
-import computeWinner from './computeWinner';
 import emptySpots from './emptySpots';
 
 const computeDraw = (board) => {
