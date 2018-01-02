@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getNextPlayer, setFirstPlayer } from '../actions/turn';
+import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
 import { renderAiChoice, clearBoard } from '../actions/board';
 import { setDifficulty } from '../actions/setDifficulty';
 import { setRestart } from '../actions/gameEnding';
@@ -15,7 +15,7 @@ onDifficultyChange = (e) => {
     if(this.props.playAs === 'O') {
         this.props.dispatch(setFirstPlayer('ai'));
         this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
-        this.props.dispatch(getNextPlayer('ai'));
+        this.props.dispatch(asyncNextPlayer('ai'));
     } 
 };
 
@@ -26,10 +26,20 @@ onPlayAsChange = (e) => {
     if(e.target.value === 'O') {
         this.props.dispatch(setFirstPlayer('ai'));
         this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
-        this.props.dispatch(getNextPlayer('ai'));
+        this.props.dispatch(asyncNextPlayer('ai'));
     } else {
         this.props.dispatch(setFirstPlayer('human'));
     }
+};
+
+onRestartGame = () => {
+    this.props.dispatch(clearBoard());
+    this.props.dispatch(setRestart());
+    if(this.props.playAs === 'O') {
+        this.props.dispatch(setFirstPlayer('ai'));
+        this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
+        this.props.dispatch(asyncNextPlayer('ai'));
+    } 
 };
 
  render() {
@@ -45,6 +55,9 @@ onPlayAsChange = (e) => {
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
+            <button onClick={this.onRestartGame}>
+                You know what? Restart Game
+            </button>
         </div>
     );
  };

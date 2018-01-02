@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { renderClickedSpot } from '../actions/board';
-import { setFirstPlayer, getNextPlayer } from '../actions/turn';
+import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
 import computeWinner from '../computations/computeWinner';
 import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
@@ -21,10 +21,10 @@ class Square extends React.Component {
             if(computeDraw(this.props.board)) {
                 this.props.dispatch(setDrawEnding());
             }
+            this.props.dispatch(asyncNextPlayer(this.props.currentTurn.currentPlayer));
             setTimeout(() => {
-                this.props.dispatch(getNextPlayer(this.props.currentTurn.currentPlayer));
                 this.props.compListen();
-            }, 100);
+            }, 400); // wait 4 ms due to async next player being 3 ms
         }
     };
 

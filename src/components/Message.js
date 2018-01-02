@@ -20,7 +20,7 @@ const Message = (props) => {
             {
             !!props.gameEnding ? ( <p>{ender}</p> ) :
             (
-                <p>Hey World</p>
+                <p>It's {props.whoseTurn}'s turn</p>
             )
             }
         </div>
@@ -28,7 +28,8 @@ const Message = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    gameEnding: state.gameEnding
+    gameEnding: state.gameEnding,
+    whoseTurn: state.currentTurn.turn
 });
 
 export default connect(mapStateToProps)(Message);

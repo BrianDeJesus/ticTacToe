@@ -2,7 +2,7 @@ import React from 'react';
 import Square from './Square';
 import { connect } from 'react-redux';
 import { renderAiChoice } from '../actions/board';
-import { setFirstPlayer, getNextPlayer } from '../actions/turn';
+import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
 import computeWinner from '../computations/computeWinner';
 import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
@@ -20,7 +20,7 @@ class Board extends React.Component {
             else if(computeDraw(this.props.board)) {
                 this.props.dispatch(setDrawEnding());
             }
-            this.props.dispatch(getNextPlayer(this.props.currentTurn.currentPlayer));
+            this.props.dispatch(asyncNextPlayer(this.props.currentTurn.currentPlayer));
         }
     };
     render() {
