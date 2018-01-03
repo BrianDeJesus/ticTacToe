@@ -1,0 +1,22 @@
+.Square, .Winning-square {
+    border: 1px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98px;
+    width: 98px;
+  }
+  
+  .Winning-square {
+    color: #000000;
+    background-color: #cac9c9a2;
+    opacity: 1;  
+    animation: flickerAnimation 1s infinite;
+  }
+  
+  @keyframes flickerAnimation { 
+    0%   { opacity:1; }
+    50%  { opacity:0.5; }
+    100% { opacity:1; }
+  }
+  

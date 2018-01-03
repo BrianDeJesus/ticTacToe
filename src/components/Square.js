@@ -33,7 +33,10 @@ class Square extends React.Component {
     render() {
         return ( 
             <div>
-                <div onClick={this.onClickSquare} className="Square">
+                <div 
+                onClick={this.onClickSquare} 
+                className={computeWinningCombo(this.props.board).includes(this.props.id) ? 'Winning-square' : 'Square'}
+                >
                     {
                         this.props.board[this.props.id]
                     }

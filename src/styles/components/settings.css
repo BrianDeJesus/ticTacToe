@@ -1,11 +1,11 @@
 .Settings-container {
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
     font-size: 1rem;
 }
 
 .Settings-label {
-    padding: 10px 5px;
+    padding: 5px 5px;
 }
 
 .Options-select {
@@ -27,7 +27,7 @@
 .Restart-button {
     font-size: .7rem;
     padding: 5px 10px;
-    margin-left: 12px;
+    margin: 12px 10px;
     border-radius: 5px;
     background: #015c75;
     outline: none;

@@ -3,6 +3,7 @@
 @import './components/message.css';
 @import './components/settings.css';
 @import './components/board.css';
+@import './components/square.css';
 
 body {
   padding: 0;
@@ -10,14 +11,8 @@ body {
   font-family: monospace;
   background-color: #310000;
   color: #ffffff;
+  width: 100%;
+  height: 100%;
 }
 
-.Square {
-  border: 1px solid #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 98px;
-  width: 98px;
-}
 

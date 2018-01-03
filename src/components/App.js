@@ -10,8 +10,8 @@ const App = () => {
       <div className="App">
         <Header />
         <Scores />
-        <Message />
         <Settings />
+        <Message />
         <Board />
       </div>
     );
