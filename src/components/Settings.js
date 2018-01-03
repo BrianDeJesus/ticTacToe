@@ -8,14 +8,20 @@ import { setPlayAs } from '../actions/setPlayAs';
 
 class Settings extends React.Component {
 
+onAiGoingFirst = () => {
+    this.props.dispatch(setFirstPlayer('ai'));
+    setTimeout(() => {
+        this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
+    }, 400);
+    this.props.dispatch(asyncNextPlayer('ai'));
+};
+
 onDifficultyChange = (e) => {
     this.props.dispatch(clearBoard());
     this.props.dispatch(setDifficulty(e.target.value));
     this.props.dispatch(setRestart());
     if(this.props.playAs === 'O') {
-        this.props.dispatch(setFirstPlayer('ai'));
-        this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
-        this.props.dispatch(asyncNextPlayer('ai'));
+       this.onAiGoingFirst();
     } 
 };
 
@@ -24,9 +30,7 @@ onPlayAsChange = (e) => {
     this.props.dispatch(setRestart());
     this.props.dispatch(setPlayAs(e.target.value));
     if(e.target.value === 'O') {
-        this.props.dispatch(setFirstPlayer('ai'));
-        this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
-        this.props.dispatch(asyncNextPlayer('ai'));
+        this.onAiGoingFirst();
     } else {
         this.props.dispatch(setFirstPlayer('human'));
     }
@@ -36,9 +40,7 @@ onRestartGame = () => {
     this.props.dispatch(clearBoard());
     this.props.dispatch(setRestart());
     if(this.props.playAs === 'O') {
-        this.props.dispatch(setFirstPlayer('ai'));
-        this.props.dispatch(renderAiChoice('X', this.props.board, this.props.gameDifficulty));
-        this.props.dispatch(asyncNextPlayer('ai'));
+        this.onAiGoingFirst();
     } 
 };
 
