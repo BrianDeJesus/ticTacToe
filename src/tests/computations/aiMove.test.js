@@ -13,11 +13,3 @@ test('should not place move on already chosen spot', () => {
     const move = aiMove('O', board7, 7, 'O');
     expect(move.index).not.toBe(0);
 });
-
-test('should correctly compute ai winning move', () => {
-    const move = aiMove('O', board6, 7, 'O');
-    expect(move).toEqual({
-        index: 6,
-        score: expect.any(Number)
-    });
-});

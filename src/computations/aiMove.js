@@ -1,13 +1,13 @@
 import emptySpots from './emptySpots';
-import computeWinner from './computeWinner';
+import computeWinningCombo from './computeWinningCombo';
 import computeDraw from './computeDraw';
 
 //state.board will be passed to board
 const aiMove = (player, board, depth, aiTurn) => { //player and aiTurn should be state.currentTurn.turn
     // base cases
-    if(computeWinner(board) === aiTurn){
+    if(board[computeWinningCombo(board)[0]] === aiTurn){
       return {score: 100 - depth};
-    } else if(computeWinner(board) === getOtherMove(aiTurn)){
+    } else if(board[computeWinningCombo(board)[0]] === getOtherMove(aiTurn)){
         return {score: depth - 100};
     } else if (computeDraw(board)){
       return {score: 0};

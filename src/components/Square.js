@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { renderClickedSpot } from '../actions/board';
 import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
-import computeWinner from '../computations/computeWinner';
+import computeWinningCombo from '../computations/computeWinningCombo';
 import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
 import { setHumanScore } from '../actions/score';
@@ -10,12 +10,12 @@ import { setHumanScore } from '../actions/score';
 class Square extends React.Component {
 
     onClickSquare = () => {
-        if(this.props.currentTurn.currentPlayer === 'human' && (this.props.board[this.props.id] === '') && (computeWinner(this.props.board) === 'Z')) {
+        if(this.props.currentTurn.currentPlayer === 'human' && (this.props.board[this.props.id] === '') && (computeWinningCombo(this.props.board) === "Z")) {
             this.props.dispatch(renderClickedSpot(this.props.id, this.props.currentTurn.turn));
             let winner;
             setTimeout(() => { //take a little time to get new changes
-                winner = computeWinner(this.props.board);
-                if(winner !== 'Z') {
+                winner = this.props.board[computeWinningCombo(this.props.board)[0]];
+                if(winner !== undefined) {
                     this.props.dispatch(setWinner(this.props.currentTurn.currentPlayer));
                     this.props.dispatch(setHumanScore());
                 }

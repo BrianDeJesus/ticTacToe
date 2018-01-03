@@ -3,7 +3,7 @@ import Square from './Square';
 import { connect } from 'react-redux';
 import { renderAiChoice } from '../actions/board';
 import { setFirstPlayer, asyncNextPlayer } from '../actions/turn';
-import computeWinner from '../computations/computeWinner';
+import computeWinningCombo from '../computations/computeWinningCombo';
 import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
 import { setAiScore } from '../actions/score';
@@ -11,11 +11,10 @@ import { setAiScore } from '../actions/score';
 class Board extends React.Component {
 
     compResponse = () => { //AI response to human click
-        if(this.props.currentTurn.currentPlayer === 'ai' && (computeWinner(this.props.board) === 'Z')) {
+        if(this.props.currentTurn.currentPlayer === 'ai' && (computeWinningCombo(this.props.board) === "Z")) {
             this.props.dispatch(renderAiChoice(this.props.currentTurn.turn, this.props.board, this.props.gameDifficulty));
-            const winner = computeWinner(this.props.board);
-            
-            if(winner !== 'Z') {
+            const winner = this.props.board[computeWinningCombo(this.props.board)[0]];
+            if(winner !== undefined) {
                 this.props.dispatch(setWinner(this.props.currentTurn.currentPlayer));
                 this.props.dispatch(setAiScore());
             }
