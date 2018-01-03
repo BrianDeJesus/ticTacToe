@@ -16,13 +16,19 @@ class Settings extends React.Component {
         this.props.dispatch(asyncNextPlayer('ai'));
     };
 
+    onHumanGoingFirst = () => {
+        this.props.dispatch(setFirstPlayer('human'));
+    };
+
     onDifficultyChange = (e) => {
         this.props.dispatch(clearBoard());
         this.props.dispatch(setDifficulty(e.target.value));
         this.props.dispatch(setRestart());
         if(this.props.playAs === 'O') {
-        this.onAiGoingFirst();
-        } 
+            this.onAiGoingFirst();
+        } else {
+            this.onHumanGoingFirst();
+        }
     };
 
     onPlayAsChange = (e) => {
@@ -32,7 +38,7 @@ class Settings extends React.Component {
         if(e.target.value === 'O') {
             this.onAiGoingFirst();
         } else {
-            this.props.dispatch(setFirstPlayer('human'));
+            this.onHumanGoingFirst();
         }
     };
 
@@ -41,7 +47,9 @@ class Settings extends React.Component {
         this.props.dispatch(setRestart());
         if(this.props.playAs === 'O') {
             this.onAiGoingFirst();
-        } 
+        } else {
+            this.onHumanGoingFirst();
+        }
     };
 
  render() {
