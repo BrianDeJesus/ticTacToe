@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Header = () => (
-    <div>
-        <header className="App-header">
-          <h1 className="App-title">Tic-Tac-Toe</h1>
-        </header>
+    <div className="App-header">
+        <a href="https://github.com/BrianDeJesus/ticTacToe" className="Github-link">View on Github</a>
+        <h1 className="App-title">Tic-Tac-Toe</h1>
     </div>
 );
 

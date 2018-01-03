@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 
 const Scores = (props) => {
     return (
-        <div>
-            <span> 
+        <div className="Score-container">
+            <span className="Human-score"> 
                 You: {props.humanScore}
             </span>
-            <span> 
+            <span className="Ai-score"> 
                 AI: {props.aiScore}
             </span>
         </div>

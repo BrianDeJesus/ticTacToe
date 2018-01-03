@@ -44,18 +44,18 @@ onRestartGame = () => {
 
  render() {
      return (
-        <div>
-            <span>Difficulty:</span>
-            <select onChange={this.onDifficultyChange}>
+        <div className="Settings-container">
+            <span className="Settings-label">Difficulty:</span>
+            <select onChange={this.onDifficultyChange} className="Options-select">
                 <option value="insane">Insane</option>
                 <option value="normal">Normal</option>
             </select>
-            <span> Play as X's or O's? </span>
-            <select onChange={this.onPlayAsChange}>
+            <span className="Settings-label"> X or O? </span>
+            <select onChange={this.onPlayAsChange} className="Options-select">
                 <option value="X">X</option>
                 <option value="O">O</option>
             </select>
-            <button onClick={this.onRestartGame}>
+            <button onClick={this.onRestartGame} className="Restart-button">
                 Restart
             </button>
         </div>

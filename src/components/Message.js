@@ -16,7 +16,7 @@ const Message = (props) => {
             break;
     };
     return (
-        <div>
+        <div className="Message">
             {
             !!props.gameEnding ? ( <p>{ender}</p> ) :
             (

@@ -1,0 +1,41 @@
+.Settings-container {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1rem;
+}
+
+.Settings-label {
+    padding: 10px 5px;
+}
+
+.Options-select {
+    border-radius: 0px;
+    background: #015c75;
+    font-size: .7rem;
+    color: #ffffff;
+    border: none;
+}
+
+.Options-select:focus  {
+    outline-color: #e77330;
+}
+
+.Options-select:hover  {
+    cursor: pointer;
+}
+
+.Restart-button {
+    font-size: .7rem;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 5px;
+    background: #015c75;
+    outline: none;
+    color: #ffffff;
+    border: none;
+}
+
+.Restart-button:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+}
