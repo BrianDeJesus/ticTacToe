@@ -1,10 +1,7 @@
 import emptySpots from './emptySpots';
 
-const computeDraw = (board) => {
-    if (emptySpots(board).length === 0) {
-        return true;
-    }
-    return false;
+const computeDraw = (board) => { //If there are no empty spots return true
+    return emptySpots(board).length === 0 ? true : false;
 };
 
 export default computeDraw;

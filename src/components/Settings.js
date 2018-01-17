@@ -6,7 +6,7 @@ import { setDifficulty } from '../actions/setDifficulty';
 import { setRestart } from '../actions/gameEnding';
 import { setPlayAs } from '../actions/setPlayAs';
 
-class Settings extends React.Component {
+export class Settings extends React.Component {
 
     onAiGoingFirst = () => {
         this.props.dispatch(setFirstPlayer('ai'));

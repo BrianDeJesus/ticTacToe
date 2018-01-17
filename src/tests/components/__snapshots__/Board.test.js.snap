@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Board 1`] = `
+<div>
+  <div
+    className="Board"
+  >
+    <Connect(Square)
+      compResponse={[Function]}
+      id={0}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={1}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={2}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={3}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={4}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={5}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={6}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={7}
+    />
+    <Connect(Square)
+      compResponse={[Function]}
+      id={8}
+    />
+  </div>
+</div>
+`;

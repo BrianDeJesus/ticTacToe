@@ -8,7 +8,7 @@ import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
 import { setAiScore } from '../actions/score';
 
-class Board extends React.Component {
+export class Board extends React.Component {
 
     compResponse = () => { //AI response to human click
         if(this.props.currentTurn.currentPlayer === 'ai' && (computeWinningCombo(this.props.board) === "Z")) {

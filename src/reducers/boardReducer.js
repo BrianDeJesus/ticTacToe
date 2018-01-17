@@ -15,7 +15,7 @@ const boardReducer = (state = emptyBoard, action) => {
             });
         case 'SHOW_AI_CHOICE':
             return state.map((square, index) => {
-                if(index === action.spotChosen) {
+                if(index === action.spotChosen) { //Return which turn(X or O) on spot chosen
                     return action.whichTurn;
                 }
                 return square;

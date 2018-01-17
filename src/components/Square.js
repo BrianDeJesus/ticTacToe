@@ -7,7 +7,7 @@ import computeDraw from '../computations/computeDraw';
 import { setDrawEnding, setWinner } from '../actions/gameEnding';
 import { setHumanScore } from '../actions/score';
 
-class Square extends React.Component {
+export class Square extends React.Component {
 
     onClickSquare = () => {
         if(this.props.currentTurn.currentPlayer === 'human' && (this.props.board[this.props.id] === '') && (computeWinningCombo(this.props.board) === "Z")) {

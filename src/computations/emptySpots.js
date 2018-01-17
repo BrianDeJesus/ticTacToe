@@ -1,9 +1,9 @@
-const emptySpots = (board) => {
+const emptySpots = (board) => { //Return array of empty spots on board
     return board.map((square, index) => {
-        if(square === '') {
+        if(square === '') { //Returns empty spot index
             return index;
         }
-        return undefined;
+        return undefined; //Returns undefined if spot taken
     }).filter((square) => square !== undefined); 
 };
 

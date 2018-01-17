@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Scores = (props) => {
+export const Scores = (props) => {
     return (
         <div className="Score-container">
             <span className="Human-score"> 

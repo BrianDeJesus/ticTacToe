@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render scores component 1`] = `
+<div
+  className="Score-container"
+>
+  <span
+    className="Human-score"
+  >
+    You: 
+  </span>
+  <span
+    className="Ai-score"
+  >
+    AI: 
+  </span>
+</div>
+`;

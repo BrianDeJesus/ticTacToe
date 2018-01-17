@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Settings component 1`] = `
+<div
+  className="Settings-container"
+>
+  <span
+    className="Settings-label"
+  >
+    Difficulty:
+  </span>
+  <select
+    className="Options-select"
+    onChange={[Function]}
+  >
+    <option
+      value="insane"
+    >
+      Insane
+    </option>
+    <option
+      value="normal"
+    >
+      Normal
+    </option>
+  </select>
+  <span
+    className="Settings-label"
+  >
+     X or O? 
+  </span>
+  <select
+    className="Options-select"
+    onChange={[Function]}
+  >
+    <option
+      value="X"
+    >
+      X
+    </option>
+    <option
+      value="O"
+    >
+      O
+    </option>
+  </select>
+  <button
+    className="Restart-button"
+    onClick={[Function]}
+  >
+    Restart
+  </button>
+</div>
+`;

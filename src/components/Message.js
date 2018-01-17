@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Message = (props) => {
+export const Message = (props) => {
     const ending = props.gameEnding;
     let ender;
     switch(ending) {
