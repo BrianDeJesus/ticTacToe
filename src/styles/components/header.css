@@ -2,7 +2,7 @@
     height: 50px;
     padding: 10px 10px 20px 10px;
     color: white;
-    text-align: right;
+    width: 100%;
   }
 
 .App-title {
@@ -10,13 +10,31 @@
     text-align: center;
 }
 
-.Github-link {
-    color: #02A296;
-    padding-right: 10px;
-    font-size: .95rem;
+.Link-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.Github-link:hover {
+.Github-link {
+    padding-right: 30px;
+}
+
+.Github-link a {
+    color: #02A296;
+    font-size: .9rem;
+}
+
+.Name-link {
+    color: rgb(255, 255, 255);
+    padding-left: 10px;
+    font-size: .9rem;
+}
+
+.Name-link a {
+    color: #02A296;
+}
+
+.Github-link a:hover, .Name-link a:hover {
     color: #ffffff
 }
 
